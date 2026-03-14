@@ -207,9 +207,9 @@ header.sticky {
     display: none;
 }
 
-/* --- 7. HOME SECTION (MINIMAL GAMING) --- */
+/* --- 7. HOME SECTION (GAMING HERO) --- */
 section {
-    padding: 100px 10% 60px; /* Padding reduced for compact look */
+    padding: 180px 10% 120px;
 }
 
 .home {
@@ -217,153 +217,242 @@ section {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     align-items: center;
-    gap: 2.5rem;
+    gap: 4.5rem;
+}
+
+.home-content {
+    max-width: 850px;
 }
 
 .home-content h1 {
     font-family: "Orbitron", sans-serif;
-    font-size: 2.4rem; /* Desktop par bhi sleek aur small */
-    font-weight: 800;
+    font-size: var(--big-font);
+    font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 0.8rem;
-    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
 }
 
 .change-text {
-    font-size: 1.3rem; /* Very small and clean */
-    font-weight: 600;
-    margin-bottom: 1.2rem;
-    height: 35px;
+    font-family: "Rajdhani", sans-serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.change-text h3 {
+    display: inline-flex;
+    margin: 0;
+    color: var(--hover-color);
+    text-shadow: 0 0 15px rgba(18, 247, 255, 0.4);
 }
 
 .home-content p {
-    color: #aaaaaa;
-    font-size: 0.95rem; /* Compact readable text */
-    line-height: 1.6;
-    max-width: 550px;
-    margin-bottom: 1.8rem;
-    border-left: 2px solid var(--hover-color);
-    padding-left: 12px;
+    color: #cccccc;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid var(--hover-color);
+    padding-left: 20px;
 }
 
-/* --- 8. COMPACT INFO & BUTTONS --- */
+/* --- 8. INFO BOX & BUTTONS --- */
 .info-box {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 8px;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 12px;
     border: 1px solid rgba(18, 247, 255, 0.1);
     width: fit-content;
 }
 
 .info-box h5 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: var(--accent-royal);
 }
 
 .info-box span {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+    color: #999;
 }
 
 .btn-box {
     display: flex;
-    gap: 12px;
-    height: 42px; /* Slim buttons */
+    gap: 25px;
+    height: 55px;
 }
 
 .btn-box .btn {
-    width: 150px;
-    font-size: 0.85rem;
-    letter-spacing: 0.5px;
-    clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 100%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 190px;
+    height: 100%;
+    background: var(--hover-color);
+    color: var(--bg-color);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: var(--smooth-transition);
+    border: 2px solid var(--hover-color);
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
-/* --- 9. SMALL EMAIL/CONTACT SECTION FIX --- */
-/* Agar aapka email section contact form ke andar hai */
-.contact-form {
-    max-width: 500px; /* Puray section ko chota rakha hai */
-    margin-top: 2rem;
+.btn:hover {
+    color: var(--hover-color);
+    box-shadow: var(--neon-glow-strong);
+    transform: translateY(-5px);
 }
 
-.email-field {
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
     width: 100%;
-    max-width: 50px; /* Email input ko specific chota size diya */
-    padding: 10px 15px;
-    font-size: 0.85rem;
-    background: #151515;
-    border: 1px solid #333;
-    border-radius: 5px;
-    color: #fff;
+    height: 100%;
+    background: var(--bg-color);
+    transition: 0.5s;
+    z-index: -1;
 }
 
-/* --- 10. HOME IMAGE & BALL --- */
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:nth-child(2) {
+    background: transparent;
+    color: var(--hover-color);
+}
+
+.btn:nth-child(2):hover {
+    color: var(--bg-color);
+    background: var(--hover-color);
+}
+
+/* --- 9. SOCIAL ICONS (EXPANDED) --- */
+.social-icon {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.social-icon a {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    color: var(--hover-color);
+    border: 2px solid var(--hover-color);
+    border-radius: 8px;
+    font-size: 1.6rem;
+    transition: var(--smooth-transition);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.social-icon a:hover {
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--hover-color);
+}
+
+.social-icon a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: var(--hover-color);
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: 0.4s;
+}
+
+.social-icon a:hover::after {
+    width: 100%;
+}
+
+/* --- 10. HOME IMAGE & CONIC BALL --- */
+.home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* border: 5px solid red; */
+    /* margin-bottom: 150px; */
+
+}
+
 .ball {
-    width: 320px; /* Compact ball size */
-    height: 320px;
+    width: 450px;
+    height: 450px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    border-radius: 50%;
+    
+}
+
+@property --deg {
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+.ball::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: conic-gradient(from var(--deg) at center, #00c6ff, #0072ff, #4f46e5, #7f00ff, #d946ef, #00c6ff);
+    animation: autoRotate 6s linear infinite;
+    z-index: -1;
+}
+
+.ball::after {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: conic-gradient(from var(--deg) at center, #00c6ff, #0072ff, #4f46e5, #7f00ff, #d946ef, #00c6ff);
+    filter: blur(50px);
+    opacity: 0.9;
+    z-index: -2;
+    animation: autoRotate 6s linear infinite;
 }
 
 .ball .ppp {
-    border: 6px solid var(--bg-color);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 8px solid var(--bg-color);
 }
 
-/* --- 11. FULLY RESPONSIVE (MOBILE OPTIMIZED) --- */
-@media (max-width: 991px) {
-    .home {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 3rem;
-    }
-    .home-image {
-        order: -1;
-    }
-    .home-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .home-content p {
-        border-left: none;
-        border-bottom: 2px solid var(--hover-color);
-        padding: 0 0 10px 0;
-    }
-    .info-box {
-        margin: 0 auto 1.5rem;
-    }
-    .btn-box {
-        justify-content: center;
-    }
+.liquid-shape {
+    position: absolute;
+    width: 130%;
+    height: 130%;
+    background: var(--hover-color);
+    opacity: 0.12;
+    z-index: -3;
+    animation: morph 10s linear infinite;
 }
 
-@media (max-width: 480px) {
-    :root {
-        --big-font: 1.8rem; /* Mobile par headings aur choti */
-    }
-    .home-content h1 {
-        font-size: 1.7rem;
-    }
-    .change-text {
-        font-size: 1.1rem;
-    }
-    .home-content p {
-        font-size: 0.85rem;
-    }
-    .ball {
-        width: 240px; /* Smallest size for mobile */
-        height: 240px;
-    }
-    .email-field {
-        max-width: 500%; /* Mobile par full width rahega input */
-    }
-    .btn-box {
-        flex-direction: column;
-        height: auto;
-    }
-    .btn-box .btn {
-        width: 100%;
-    }
-}
 /* --- 11. ABOUT SECTION (DETAILED) --- */
 .about {
     background: var(--second-bg-color);
@@ -1106,4 +1195,120 @@ footer a:hover {
     transform: translateY(-10px);
     background: #fff;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+/* ==========================================================================
+   THE MASSIVE RESPONSIVE ENGINE (ADD THIS AT THE END OF YOUR 1700 LINES)
+   ========================================================================== */
+
+   @media (max-width: 1200px) {
+    header { padding: 15px 5%; }
+    section { padding: 120px 5% 80px; }
+    :root {
+        --big-font: 3rem;
+        --h2-font: 3rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .home {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+    .home-image {
+        order: -1; /* Image text ke upar chali jayegi mobile mein */
+    }
+    .ball {
+        width: 350px; /* Mobile size fix */
+        height: 350px;
+        margin: 0 auto;
+    }
+    .home-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-content p {
+        border-left: none;
+        border-bottom: 3px solid var(--hover-color);
+        padding: 0 0 15px 0;
+    }
+    .info-box, .btn-box, .social-icon {
+        justify-content: center;
+    }
+    .about {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .img-about {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block; /* Mobile menu button dikhega */
+    }
+    .navlist {
+        position: absolute;
+        top: -1000px; /* Hide menu */
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        flex-direction: column;
+        padding: 30px 0;
+        transition: 0.5s ease;
+        border-bottom: 2px solid var(--hover-color);
+        z-index: 999;
+    }
+    .navlist.open {
+        top: 100%; /* Show menu when clicked */
+    }
+    .navlist a {
+        display: block;
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+    .input-grid {
+        grid-template-columns: 1fr; /* Form inputs stack ho jayenge */
+    }
+    .gaming-form textarea {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --big-font: 2.2rem;
+        --h2-font: 1.8rem;
+    }
+    .ball {
+        width: 280px;
+        height: 280px;
+    }
+    .change-text {
+        font-size: 1.5rem;
+        height: 40px;
+    }
+    .btn-box {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+    .btn-box .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    .info-box {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+}
+
+/* Fix for Animation Jumps on Mobile */
+.home-content h1, .home-content p, .btn-box {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important; /* Mobile par complex animations layout tod deti hain */
 }
